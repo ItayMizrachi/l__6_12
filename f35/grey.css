@@ -1,0 +1,174 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background: silver;
+  margin:0;
+  font-family: sans-serif;
+}
+
+.container-fluid{
+  width:100%;
+}
+
+.container{
+  max-width: 1000px;
+  margin:0 auto;
+  /* border:2px solid red; */
+}
+
+header{
+  min-height: 80px;
+  background: white;
+}
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  /* מיישר מבחינת גובה את הילדים לאמצע */
+  align-items: center;
+  min-height: 80px;
+}
+
+header .logo{
+  /* רוחב מקסימלי לפי התמונה שנמצאת בפנים */
+  max-width: 363px;
+}
+
+header .logo img{
+  width: 100%;
+}
+
+
+header nav ul{
+  display: flex;
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+header nav ul li a{
+  text-decoration: none;
+  color:#777;
+  padding:0 12px;
+  /* 1em = 16px  */
+  font-size: 1.25em;
+}
+
+header nav ul li a:hover{
+  color:orange;
+}
+
+/* הבורגר לא יופיע במצב דסקטופ */
+header .burger{
+  display: none;
+}
+
+.strip{
+  min-height: 300px;
+  background: #777;
+  padding:8px;
+  color:white;
+}
+
+.strip .container{
+  /* inherit -> יירש את הגובה מהאבא שלו */
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strip .container article{
+  max-width:500px;
+  /* גורם לטקסט הפנימי 
+  ומשפיע גם על תמונות, כפתורים ווידיאו */
+  text-align: center;
+}
+
+.strip .container article h1{
+  font-size: 3em;
+  margin: 0;
+}
+
+.strip .container article button{
+  background: #333;
+  color:white;
+  border:none;
+  /* בכפתורים נעדיף לא לתת גובה ורוחב
+  אלא פדינג ללמעלה למטה */
+  padding:12px 48px;
+  /* מעגל קצוות בפינות של האלמנט/תגית */
+  border-radius: 24px;
+}
+
+main{
+  min-height: 300px;
+  background: #ddd;
+  /* דואג שילד שיש לו פוזישן אבסלוט הנקודת 0 , 0 שלו תתייחס
+  לאבא ולא לבאדי */
+  position: relative;
+}
+
+main .half_grey{
+  position: absolute;
+  width:100%;
+  height: 100px;
+  background: #777;
+  top:0;
+  left:0;
+}
+
+main .row{
+  display: flex;
+  padding:48px 0;
+  justify-content: space-between;
+  /* כדי שהילד יפול למטה אם הוא עבר את הרוחב של ה100 אחוז */
+  flex-wrap: wrap;
+}
+
+main .row .box{
+  width:30%;
+  background: white;
+  padding:24px 16px;
+  text-align: center;
+  border:1px solid grey;
+/* צל  */
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  /* ציר הזיד , ציר העומק והשכבות */
+  z-index: 99;
+}
+
+
+/* תנאי מה קורה לסלקטורים מ768 פיקסלים ומטה */
+@media screen and (max-width:768px){
+  /* הסלקטורים שנמצאים בתוך המדיה יעבדו רק אם התנאי
+  של גודל המסך נכון */
+  header nav {
+    /* יסתיר את התפריט הרגיל במצב ריספונסבי סמרטפון */
+    display: none;
+  }
+
+  header .burger{
+    display: block;
+    padding-right:12px;
+  }
+
+  header .burger i{
+    font-size: 2em;
+  }
+
+  .strip{
+    /* background: orange; */
+  }
+
+  main{
+    padding:16px;
+  }
+
+  main .row .box{
+    width:100%;
+    margin-bottom: 24px;
+  }
+}

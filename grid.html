@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container border border-dark">
+        <!-- col - מייצג מספר טורים לרוחב
+          col-12 = 100%;
+          col-6 = 50%
+        col-3 = 25%
+      col-4 = 33.33% -->
+      <!-- row -> display:flex , flex-wrap:wrap
+      col-lg-> מ992 פיקסלים רוחב יהפוך להיות במספר הטורים שקבענו -->
+        <div class="row">
+          <div class="col-6 col-lg-3 bg-success">col - 3</div>
+          <div class="col-6 col-lg-4 bg-warning">col - 4</div>
+          <div class="col-lg-2 bg-danger">col - 2</div>
+        </div>
+      
+
+      <div class="row bg-dark mt-5 justify-content-center" style="min-height: 200px;">
+        <div class="col-6 col-lg-3 bg-success">col - 3</div>
+        <div class="col-6 col-lg-4 bg-warning">col - 3</div>
+        <div class="col-lg-2 bg-danger">col - 3</div>
+      </div>
+
+      <div class="row bg-dark mt-5 justify-content-between" >
+        <div class="col-6 col-lg-3 bg-success">col - 3</div>
+        <div class="col-6 col-lg-4 bg-warning">col - 3</div>
+        <div class="col-lg-2 bg-danger">col - 3</div>
+      </div>
+
+      <div class="row bg-dark mt-5 align-items-center" style="min-height: 150px;" >
+        <div class="col-6 col-lg-3 bg-success">col - 3</div>
+        <div class="col-6 col-lg-4 bg-warning">col - 3</div>
+        <div class="col-lg-2 bg-danger">col - 3</div>
+      </div>
+    </div>
+</div>
+    
+</body>
+</html>

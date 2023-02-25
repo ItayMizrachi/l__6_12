@@ -1,0 +1,70 @@
+body{
+    background: silver;
+}
+
+.container{
+    max-width: 1140px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+header{
+    min-height: 60px;
+    background: rgba(0, 0, 0, 0.707);
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+}
+
+header .row{
+    min-height: 60px;
+}
+
+header .row nav ul li a{
+    color: white;
+    padding: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    transition: 800ms;
+}
+
+header .row nav ul li a:hover{
+    background: red;
+}
+
+main{
+    min-height: 95vh;
+    background: white;
+}
+
+main .row .left_box{
+    min-height: 400px;
+    background: rgb(168, 4, 4);
+    color: white;
+}
+
+/* row 2 */
+
+main .row .box h4  {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 16px 0;
+    margin: 0;
+    
+}
+
+main .row .box .video_box{
+    min-height: 200px;
+    background:rgb(168, 4, 4); ;
+}

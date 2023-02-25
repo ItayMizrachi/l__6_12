@@ -1,0 +1,218 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+}
+
+body{
+  background: silver;
+  /* font-family: sans-serif; */
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid{
+  width:100%;
+}
+
+.container{
+  max-width: 1140px;
+  /* כדי שאם ניתן לאחד האבות של הקונטיינר
+  דיספליי פלקס הוא לא יהפוך להיות צר יותר */
+  width:100%;
+  margin:0 auto;
+  /* border:1px solid black; */
+}
+
+header{
+  min-height: 80px;
+  background: white;
+}
+
+header .row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 8px;
+}
+
+header .row .logo{
+  /* border: 2px solid green; */
+  width:25%;
+}
+
+header .row .logo img{
+  width:100%;
+  /* max-content -> הגודל המקורי של התמונה
+  ככה שהיא לא תגדל מעבר ותיהיה מפוקסלת */
+  max-width: max-content;
+}
+
+header .row nav{
+  display: flex;
+  justify-content: space-between;
+  /* border:2px solid red; */
+  width:75%;
+  align-items: center;
+}
+
+header .row nav ul{
+  list-style: none;
+  padding:0;
+  display: flex;
+}
+
+header .row nav ul a{
+  color:grey;
+  padding: 0 12px;
+  text-decoration: none;
+  transition: 800ms;
+  
+}
+
+header .row nav ul a:hover{
+  color:skyblue
+}
+
+header .row nav .search{
+  padding:8px;
+  border:1px solid silver;
+  border-radius: 8px;
+}
+
+header .row nav .search input{
+  border:none;
+  /* מסתיר את המסגרת של הדפדפן כשהוא בפוקוס */
+  outline: none;
+  width:80%;
+}
+
+header .row nav .search button{
+ border:none;
+ /* transparent - שקוף לרקע */
+ background: transparent;
+ transform: translate(0px,2px);
+ cursor: pointer;
+}
+
+header .row .burger{
+  /* מסתיר את הבורגר במצב דסקטופ */
+  display: none;
+}
+
+.strip{
+  min-height: 300px;
+  background-image: url(images/strip.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+
+.strip h1{
+  color:white;
+  font-size: 3em;
+  margin-bottom: 16px;
+  font-weight: 300;
+  text-shadow: 3px 3px 0 #000000;
+}
+
+.strip h1 .icon1{
+  transform: rotate(-90deg);
+  transition: 2000ms;
+}
+
+.strip:hover h1 .icon1{
+  transform: translate(0,-180px) rotate(-90deg) scale(1.5);
+}
+
+main{
+  min-height: 300px;
+  background: #ddd;
+  padding:48px 0;
+}
+
+main .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .row .box{
+  width:23%;
+  border:1px solid grey;
+  background: white;
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+main .row .box h3{
+  background: rgb(85, 172, 206);
+  color:white;
+  padding:16px;
+  border-bottom: 5px solid rgb(75, 115, 131);
+}
+
+main .row .box img{
+  margin:16px 0;
+}
+
+main .row .box p{
+  margin-bottom: 16px;
+  font-size: 0.8em;
+  padding:0 8px;
+}
+
+main .row .box a{
+  color:rgb(80, 146, 172);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+
+
+
+
+/* תנאי של גודל מסך עד 991 פיקסל - טאבלט עומד */
+/* @media screen and (max-width:768px) */
+@media (max-width:991px){
+
+  header .row .logo{
+    width:70%;
+  }
+
+  header .row nav{
+    display: none;
+  }
+
+  header .row .burger{
+    display: block;
+    font-size: 2em;
+  }
+
+  .strip{
+    background-position: center right;
+  }
+
+  .strip h1{
+    text-align: center;
+  }
+
+  main .row{
+    padding:12px;
+  }
+  
+  main .row .box{
+    width:48%;
+    /* ריווח בין בוקסות בתחתית*/
+    margin-bottom: 24px;
+  }
+}
+
+/* לסמרטפון בוודאות תנאי מגודל 576 פיקסלים לסמרטפונים
+עומדים*/
+@media (max-width:576px){
+  main .row .box{
+    width:100%;
+  }
+  
+}
